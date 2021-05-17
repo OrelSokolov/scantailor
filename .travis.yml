@@ -34,6 +34,74 @@ matrix:
       env:
         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
 
+    - os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-6
+            - libboost-dev
+            - libjpeg-dev
+            - libqt4-dev
+            - libpng-dev
+            - libtiff-dev
+            - libboost-all-dev
+      env:
+        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+
+    - os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-6
+            - libboost-dev
+            - libjpeg-dev
+            - libqt4-dev
+            - libpng-dev
+            - libtiff-dev
+            - libboost-all-dev
+      env:
+        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+
+    - os: linux
+      dist: bionic
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-6
+            - libboost-dev
+            - libjpeg-dev
+            - libqt4-dev
+            - libpng-dev
+            - libtiff-dev
+            - libboost-all-dev
+      env:
+        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+
+    - os: linux
+      dist: focal
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-6
+            - libboost-dev
+            - libjpeg-dev
+            - libqt4-dev
+            - libpng-dev
+            - libtiff-dev
+            - libboost-all-dev
+      env:
+        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+
 before_install:
   - eval "${MATRIX_EVAL}"
 
