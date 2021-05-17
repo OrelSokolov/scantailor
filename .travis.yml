@@ -46,4 +46,3 @@ before_install:
 script:
   - cmake --debug-output .
   - make
-  - make test
