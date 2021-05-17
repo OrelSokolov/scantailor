@@ -36,7 +36,7 @@ matrix:
             - libpng-dev
             - libtiff-dev
             - libboost-all-dev
-            - libXrender-dev
+#            - libXrender-dev
       env:
         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
 
