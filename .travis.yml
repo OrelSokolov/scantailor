@@ -1,29 +1,24 @@
 matrix:
   include:
-#    # works on Precise and Trusty
-#    - os: linux
-#      addons:
-#        apt:
-#          sources:
-#            - ubuntu-toolchain-r-test
-#          packages:
-#            - g++-4.9
-#      env:
-#        - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
-#
-#    # works on Precise and Trusty
-#    - os: linux
-#      addons:
-#        apt:
-#          sources:
-#            - ubuntu-toolchain-r-test
-#          packages:
-#            - g++-5
-#      env:
-#        - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
-#
-    # works on Precise and Trusty
     - os: linux
+      dist: trusty
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+            - libboost-dev
+            - libjpeg-dev
+            - libqt4-dev
+            - libpng-dev
+            - libtiff-dev
+            - libboost-all-dev
+      env:
+        - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+
+    - os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -36,7 +31,6 @@ matrix:
             - libpng-dev
             - libtiff-dev
             - libboost-all-dev
-#            - libXrender-dev
       env:
         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
 
@@ -44,5 +38,5 @@ before_install:
   - eval "${MATRIX_EVAL}"
 
 script:
-  - cmake --debug-output .
+  - cmake .
   - make
