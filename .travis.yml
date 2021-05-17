@@ -39,6 +39,6 @@ before_install:
   - eval "${MATRIX_EVAL}"
 
 script:
-  - cmake .
+  - cmake --debug-output .
   - make
   - make test
