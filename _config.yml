@@ -5,3 +5,5 @@ timezone: America/New_York
 encoding: utf-8
 paginate: 8
 paginate_path: "news/page:num"
+
+theme: jekyll-theme-cayman
