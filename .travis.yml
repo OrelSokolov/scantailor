@@ -95,7 +95,6 @@ matrix:
             - g++-8
             - libboost-dev
             - libjpeg-dev
-            - libqt4-dev
             - libpng-dev
             - libtiff-dev
             - libboost-all-dev
