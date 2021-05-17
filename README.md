@@ -1,4 +1,4 @@
-# Scan Tailor F 
+# Scan Tailor F ![](https://travis-ci.com/OrelSokolov/scantailor.svg?branch=master)
 
 ![ScanTailor logo from scantailor.org](https://raw.githubusercontent.com/OrelSokolov/scantailor/master/github_logo.png)
 
