@@ -92,7 +92,7 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - g++-6
+            - g++-8
             - libboost-dev
             - libjpeg-dev
             - libqt4-dev
@@ -100,7 +100,7 @@ matrix:
             - libtiff-dev
             - libboost-all-dev
       env:
-        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
       before_install:
         - sudo add-apt-repository -y ppa:rock-core/qt4
         - sudo apt-get -q update
