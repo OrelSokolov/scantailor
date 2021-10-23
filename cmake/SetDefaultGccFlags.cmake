@@ -7,15 +7,18 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 		SET(gc_sections_cflags_ "")
 		SET(gc_sections_ldflags_ "")
 		SET(no_inline_dllexport_cflags_ "")
-		SET(cpp11_support_ "")
+		SET(cpp11_flags_ "")
 
 		CHECK_CXX_ACCEPTS_FLAG(
-				"-std"
+				"-ansi"
 				cpp11_support_
 		)
+		MESSAGE( STATUS "Current CPP11 flag: " ${cpp11_support_} )
 		IF(cpp11_support_)
-			SET(cpp11_support_ "-std=c++11")
+			SET(cpp11_flags_ "-std=c++11")
 		ENDIF(cpp11_support_)
+
+		MESSAGE( STATUS "Current CPP11 flag: " ${cpp11_support_} )
 
 		CHECK_CXX_ACCEPTS_FLAG(
 			"-ffunction-sections -fdata-sections -Wl,--gc-sections"
@@ -62,7 +65,7 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 			SET(default_flags_ "-Wall -Wno-unused -ffast-math ${no_inline_dllexport_cflags_}")
 			# Flags common for all build configurations.
 			SET(
-				CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${default_flags_} ${cpp11_support_}"
+				CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${default_flags_} ${cpp11_flags_}"
 				CACHE STRING "Common C flags for all build configurations." FORCE
 			)
 			# the compiler flags for compiling C sources
