@@ -62,7 +62,7 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 			SET(default_flags_ "-Wall -Wno-unused -ffast-math ${no_inline_dllexport_cflags_}")
 			# Flags common for all build configurations.
 			SET(
-				CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${default_flags_}"
+				CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${default_flags_} ${cpp11_support_}"
 				CACHE STRING "Common C flags for all build configurations." FORCE
 			)
 			SET(
