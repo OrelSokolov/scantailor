@@ -70,7 +70,7 @@ CacheDrivenTask::process(
 
 		do { // Just to be able to break from it.
 
-			std::auto_ptr<OutputParams> stored_output_params(
+			std::unique_ptr<OutputParams> stored_output_params(
 				m_ptrSettings->getOutputParams(page_info.id())
 			);
 
