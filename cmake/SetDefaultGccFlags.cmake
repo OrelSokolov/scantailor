@@ -10,7 +10,7 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 		SET(cpp11_support_ "")
 
 		CHECK_CXX_ACCEPTS_FLAG(
-				"-std=c++11"
+				"-std"
 				cpp11_support_
 		)
 		IF(cpp11_support_)
@@ -66,7 +66,7 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 				CACHE STRING "Common C flags for all build configurations." FORCE
 			)
 			# the compiler flags for compiling C sources
-			MESSAGE( STATUS "CMAKE_C_FLAGS: " ${CMAKE_C_FLAGS} )
+			MESSAGE( STATUS "Current CMAKE_C_FLAGS: " ${CMAKE_C_FLAGS} )
 
 			SET(
 				CMAKE_CXX_FLAGS
@@ -75,7 +75,7 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 			)
 
 			# the compiler flags for compiling C++ sources
-			MESSAGE( STATUS "CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS} )
+			MESSAGE( STATUS "Current CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS} )
 
 			# Release
 			SET(
