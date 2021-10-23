@@ -206,21 +206,21 @@ DespeckleView::despeckleDone(
 
 	removeImageViewWidget();
 
-	std::auto_ptr<QWidget> widget(
+	std::unique_ptr<QWidget> widget(
 		new BasicImageView(
 			visualization.image(), visualization.downscaledImage(), OutputMargins()
 		)
 	);
 
 	if (dbg && !dbg->empty()) {
-		std::auto_ptr<TabbedDebugImages> tab_widget(new TabbedDebugImages);
+		std::unique_ptr<TabbedDebugImages> tab_widget(new TabbedDebugImages);
 		tab_widget->addTab(widget.release(), "Main");
 		AutoRemovingFile file;
 		QString label;
 		while (!(file = dbg->retrieveNext(&label)).get().isNull()) {
 			tab_widget->addTab(new DebugImageView(file), label);
 		}
-		widget = tab_widget;
+		widget = std::move(tab_widget);
 	}
 
 	setCurrentIndex(addWidget(widget.release()));
