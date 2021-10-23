@@ -122,7 +122,7 @@ CacheDrivenTask::process(
 
 		if (need_reprocess) {
 			thumb_col->processThumbnail(
-				std::auto_ptr<QGraphicsItem>(
+				std::unique_ptr<QGraphicsItem>(
 					new IncompleteThumbnail(
 						thumb_col->thumbnailCache(),
 						thumb_col->maxLogicalThumbSize(),
@@ -136,7 +136,7 @@ CacheDrivenTask::process(
 			);
 
 			thumb_col->processThumbnail(
-				std::auto_ptr<QGraphicsItem>(
+				std::unique_ptr<QGraphicsItem>(
 					new Thumbnail(
 						thumb_col->thumbnailCache(),
 						thumb_col->maxLogicalThumbSize(),
