@@ -7,7 +7,16 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 		SET(gc_sections_cflags_ "")
 		SET(gc_sections_ldflags_ "")
 		SET(no_inline_dllexport_cflags_ "")
-		
+		SET(cpp11_support_ "")
+
+		CHECK_CXX_ACCEPTS_FLAG(
+				"-std=c++11"
+				cpp11_support_
+		)
+		IF(cpp11_support_)
+			SET(cpp11_support "-std=c++11")
+		ENDIF(cpp11_support_)
+
 		CHECK_CXX_ACCEPTS_FLAG(
 			"-ffunction-sections -fdata-sections -Wl,--gc-sections"
 			gc_sections_supported_
@@ -58,7 +67,7 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 			)
 			SET(
 				CMAKE_CXX_FLAGS
-				"${CMAKE_CXX_FLAGS} ${default_flags_} ${stdlibs_shared_static_}"
+				"${CMAKE_CXX_FLAGS} ${default_flags_} ${stdlibs_shared_static_} ${cpp11_support_}"
 				CACHE STRING "Common C++ flags for all build configurations." FORCE
 			)
 		
