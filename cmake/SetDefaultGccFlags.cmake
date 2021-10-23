@@ -14,7 +14,7 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 				cpp11_support_
 		)
 		IF(cpp11_support_)
-			SET(cpp11_support "-std=c++11")
+			SET(cpp11_support_ "-std=c++11")
 		ENDIF(cpp11_support_)
 
 		CHECK_CXX_ACCEPTS_FLAG(
