@@ -10,15 +10,14 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 		SET(cpp11_flags_ "")
 
 		CHECK_CXX_ACCEPTS_FLAG(
-				"-ansi"
+				"-std=c++11"
 				cpp11_support_
 		)
-		MESSAGE( STATUS "Current CPP11 flag: " ${cpp11_support_} )
 		IF(cpp11_support_)
 			SET(cpp11_flags_ "-std=c++11")
 		ENDIF(cpp11_support_)
 
-		MESSAGE( STATUS "Current CPP11 flag: " ${cpp11_support_} )
+		MESSAGE( STATUS "Current CPP11 support: " ${cpp11_support_} )
 
 		CHECK_CXX_ACCEPTS_FLAG(
 			"-ffunction-sections -fdata-sections -Wl,--gc-sections"
