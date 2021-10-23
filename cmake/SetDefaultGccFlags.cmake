@@ -65,12 +65,18 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 				CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${default_flags_} ${cpp11_support_}"
 				CACHE STRING "Common C flags for all build configurations." FORCE
 			)
+			# the compiler flags for compiling C sources
+			MESSAGE( STATUS "CMAKE_C_FLAGS: " ${CMAKE_C_FLAGS} )
+
 			SET(
 				CMAKE_CXX_FLAGS
 				"${CMAKE_CXX_FLAGS} ${default_flags_} ${stdlibs_shared_static_} ${cpp11_support_}"
 				CACHE STRING "Common C++ flags for all build configurations." FORCE
 			)
-		
+
+			# the compiler flags for compiling C++ sources
+			MESSAGE( STATUS "CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS} )
+
 			# Release
 			SET(
 				CMAKE_C_FLAGS_RELEASE
