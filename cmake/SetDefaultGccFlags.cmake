@@ -73,7 +73,7 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 
 			SET(
 				CMAKE_CXX_FLAGS
-				"${CMAKE_CXX_FLAGS} ${default_flags_} ${stdlibs_shared_static_} ${cpp11_support_}"
+				"${CMAKE_CXX_FLAGS} ${default_flags_} ${stdlibs_shared_static_} ${cpp11_flags_}"
 				CACHE STRING "Common C++ flags for all build configurations." FORCE
 			)
 
