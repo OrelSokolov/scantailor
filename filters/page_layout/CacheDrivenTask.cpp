@@ -53,7 +53,7 @@ CacheDrivenTask::process(
 	PageInfo const& page_info, AbstractFilterDataCollector* collector,
 	ImageTransformation const& xform, QRectF const& content_rect)
 {
-	std::auto_ptr<Params> const params(
+	std::unique_ptr<Params> const params(
 		m_ptrSettings->getPageParams(page_info.id())
 	);
 	if (!params.get() || !params->contentSizeMM().isValid()) {

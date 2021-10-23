@@ -47,7 +47,7 @@ CacheDrivenTask::process(
 	ImageTransformation const& xform)
 {
 	Dependencies const deps(xform.preCropArea(), xform.preRotation());
-	std::auto_ptr<Params> params(m_ptrSettings->getPageParams(page_info.id()));
+	std::unique_ptr<Params> params(m_ptrSettings->getPageParams(page_info.id()));
 	if (!params.get() || !deps.matches(params->dependencies())) {
 		
 		if (ThumbnailCollector* thumb_col = dynamic_cast<ThumbnailCollector*>(collector)) {
