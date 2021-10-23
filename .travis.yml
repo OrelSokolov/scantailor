@@ -15,7 +15,7 @@ matrix:
             - libtiff-dev
             - libboost-all-dev
       env:
-        - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5 CFLAGS='-std=c++11'"
+        - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
 
     - os: linux
       dist: trusty
