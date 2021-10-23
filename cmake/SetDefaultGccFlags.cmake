@@ -9,11 +9,6 @@ MACRO(ST_SET_DEFAULT_GCC_FLAGS)
 		SET(no_inline_dllexport_cflags_ "")
 		SET(cpp11_flags_ "")
 
-		CHECK_CXX_ACCEPTS_FLAG(
-				"-ansi"
-				cpp11_support_
-		)
-		MESSAGE( STATUS "Current CPP11 flag: " ${cpp11_support_} )
 		IF(cpp11_support_)
 			SET(cpp11_flags_ "-std=c++11")
 		ENDIF(cpp11_support_)
