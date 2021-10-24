@@ -116,7 +116,7 @@ Task::process(TaskStatus const& status, FilterData const& data)
 
 	CommandLine const& cli = CommandLine::get();
 
-	std::auto_ptr<Params> params(m_ptrSettings->getPageParams(m_pageId));
+	std::unique_ptr<Params> params(m_ptrSettings->getPageParams(m_pageId));
 	if (params.get()) {
 		if ((!deps.matches(params->dependencies()) ||
 					params->deskewAngle() != ui_data.effectiveDeskewAngle()) &&

@@ -91,7 +91,7 @@ Task::process(TaskStatus const& status, FilterData const& data)
 	
 	Dependencies const deps(data.xform().resultingPreCropArea());
 
-	std::auto_ptr<Params> params(m_ptrSettings->getPageParams(m_pageId));
+	std::unique_ptr<Params> params(m_ptrSettings->getPageParams(m_pageId));
 	if (params.get() && !params->dependencies().matches(deps) && (params->mode() == MODE_AUTO)) {
 		params.reset();
 	}
