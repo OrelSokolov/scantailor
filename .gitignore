@@ -2,6 +2,7 @@ CMakeLists.txt.user*
 CMakeFiles
 *.qm
 *.h.moc
+*.h.moc_parameters
 build/
 *~
 
